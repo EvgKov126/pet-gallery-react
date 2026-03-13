@@ -1,10 +1,11 @@
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import './index.css';
 
 
-const PET_DATA = [
+const INITIAL_PETS = [
   { id: 1, name: "Бакс", species: "Собака", age: 7, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp3oZBH312SzPuSV5wtYK3meaay3axZXG-ug&s" },
   { id: 2, name: "Мурка", species: "Кішка", age: 3, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwHSaeGOMGbRAQBkkwL6kSyjNse9LFbaq75Q&s" },
   { id: 3, name: "Рекс", species: "Собака", age: 5, imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QdoyIu1C-9_NqSENqzokmCVmIOrneWXfCg&s" },
@@ -14,11 +15,20 @@ const PET_DATA = [
 ];
 
 function App() {
+
+  const [pets, setPets] = useState(INITIAL_PETS);
+
+  const handleToggleLike = (id) => {
+    setPets(pets.map(pet =>
+      pet.id === id ? { ...pet, isLiked: !pet.isLiked } : pet
+    ));
+  };
+
   return (
     <div className="App">
-      <Header />
-      <Main pets={PET_DATA} />
-      <Footer year="2026" author="Ковалнко Євгеній" />
+      <Header likedCount={pets.filter(pet => pet.isLiked).length} />
+      <Main pets={pets} onToggleLike={handleToggleLike} />
+      <Footer year="2026" author="Коваленко Євгеній" />
     </div>
   );
 }

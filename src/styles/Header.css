@@ -58,3 +58,32 @@
 .main-nav a:hover {
     color: #ff7675;
 }
+
+.likes-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #f0f2f5;
+    transition: all 0.3s ease;
+}
+
+.likes-status.active {
+    background: #fff0f0;
+    box-shadow: 0 2px 8px rgba(255, 118, 117, 0.2);
+}
+
+.likes-count {
+    font-weight: bold;
+    color: #2d3436;
+    font-size: 1.1rem;
+}
+
+.heart-svg {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.likes-status.active .heart-svg {
+    transform: scale(1.2);
+}
