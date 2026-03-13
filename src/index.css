@@ -52,3 +52,32 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
+.filter-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active {
+  background: #ff7675;
+  color: white;
+  border-color: #ff7675;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px;
+  color: #636e72;
+  font-size: 1.2rem;
+}

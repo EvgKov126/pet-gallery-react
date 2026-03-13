@@ -17,6 +17,7 @@ const INITIAL_PETS = [
 function App() {
 
   const [pets, setPets] = useState(INITIAL_PETS);
+  const [filter, setFilter] = useState('all');
 
   const handleToggleLike = (id) => {
     setPets(pets.map(pet =>
@@ -24,10 +25,29 @@ function App() {
     ));
   };
 
+  const filteredPets = pets.filter(pet => {
+    if (filter === 'liked') return pet.isLiked;
+    return true; // для 'all' повертаємо всіх
+  });
+
   return (
     <div className="App">
       <Header likedCount={pets.filter(pet => pet.isLiked).length} />
-      <Main pets={pets} onToggleLike={handleToggleLike} />
+      <div className="filter-container container">
+        <button
+          className={filter === 'all' ? 'filter-btn active' : 'filter-btn'}
+          onClick={() => setFilter('all')}
+        >
+          Усі ({pets.length})
+        </button>
+        <button
+          className={filter === 'liked' ? 'filter-btn active' : 'filter-btn'}
+          onClick={() => setFilter('liked')}
+        >
+          Тільки улюблені ({pets.filter(p => p.isLiked).length})
+        </button>
+      </div>
+      <Main pets={filteredPets} onToggleLike={handleToggleLike} currentFilter={filter} />
       <Footer year="2026" author="Коваленко Євгеній" />
     </div>
   );
