@@ -1,0 +1,43 @@
+.add-pet-form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.add-pet-form h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2d3436;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.form-group button {
+    padding: 10px 25px;
+    background: #00b894;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.form-group button:hover {
+    background: #00a884;
+}

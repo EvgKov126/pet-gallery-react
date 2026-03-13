@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
+import AddPetForm from './components/AddPetForm';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import './index.css';
@@ -30,9 +31,14 @@ function App() {
     return true; // для 'all' повертаємо всіх
   });
 
+  const handleAddPet = (newPet) => {
+    setPets(prevPets => [...prevPets, newPet]);
+  };
+
   return (
     <div className="App">
       <Header likedCount={pets.filter(pet => pet.isLiked).length} />
+      <AddPetForm onAddPet={handleAddPet} />
       <div className="filter-container container">
         <button
           className={filter === 'all' ? 'filter-btn active' : 'filter-btn'}
