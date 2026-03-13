@@ -57,7 +57,7 @@ h2 {
   display: flex;
   gap: 15px;
   justify-content: center;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .filter-btn {
