@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import AddPetForm from './components/AddPetForm';
 import Main from './components/Main';
@@ -17,7 +17,12 @@ const INITIAL_PETS = [
 
 function App() {
 
-  const [pets, setPets] = useState(INITIAL_PETS);
+  const [pets, setPets] = useState(() => {
+    const savePets = localStorage.getItem('pet-gallery-data');
+    return savePets ? JSON.parse(savePets) : INITIAL_PETS;
+
+  });
+
   const [filter, setFilter] = useState('all');
 
   const handleToggleLike = (id) => {
@@ -34,6 +39,10 @@ function App() {
   const handleAddPet = (newPet) => {
     setPets(prevPets => [...prevPets, newPet]);
   };
+
+  useEffect(() => {
+    localStorage.setItem('pet-gallery-data', JSON.stringify(pets));
+  }, [pets]);
 
   return (
     <div className="App">
