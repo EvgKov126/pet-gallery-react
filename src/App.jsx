@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import AddPetForm from './components/AddPetForm';
-import Main from './components/Main';
-import PetExperts from './components/PetExperts';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
