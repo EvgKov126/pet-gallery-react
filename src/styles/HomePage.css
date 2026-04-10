@@ -1,0 +1,127 @@
+/* HomePage.css */
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #ffffff 0%, #f1f2f6 100%);
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+    margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #2d3436, #0984e3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #636e72;
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Кнопка CTA з ефектом пульсації при наведенні */
+.cta-button {
+    padding: 18px 45px;
+    background: #0984e3;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(9, 132, 227, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: #74b9ff;
+    box-shadow: 0 15px 30px rgba(9, 132, 227, 0.3);
+}
+
+/* Секція характеристик */
+.home-features {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.home-features h3 {
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.home-features ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+.home-features li {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #dfe6e9;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-features li:hover {
+    border-color: #0984e3;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+/* Декоративний елемент для кожного списку */
+.home-features li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #0984e3;
+}
+
+.home-features li strong {
+    font-size: 1.2rem;
+    color: #2d3436;
+    display: block;
+}
+
+.home-features li span {
+    color: #636e72;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/PetCard.css';
 
 const PetCard = ({ pet, handleToggleLike }) => {
@@ -33,6 +34,13 @@ const PetCard = ({ pet, handleToggleLike }) => {
                 <h3 className="pet-card-name">ім’я: {pet.name}</h3>
                 <p className="pet-card-species">вид: {pet.species}</p>
                 <p className="pet-card-age">вік: {getAgeText(pet.age)}</p>
+
+                <Link to={`/pet/${pet.id}`} className="details-link">
+                    <span>Детальніше</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </Link>
             </div>
 
             <button

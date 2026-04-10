@@ -1,20 +1,33 @@
 import React from 'react';
 import '../styles/Header.css';
+import { NavLink, Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
 const Header = ({ likedCount = 0 }) => {
     return (
         <header className="main-header">
             <div className="header-container">
-                <a href="/" className="logo-area">
+                <Link to="/" className="logo-area">
                     <img src={logo} alt="Pet Gallery Logo" className="site-logo" />
-                </a>
+                </Link>
 
                 <nav className="main-nav">
                     <ul>
-                        <li><a href="#home">Головна</a></li>
-                        <li><a href="#gallery">Улюбленці</a></li>
-                        <li><a href="#contact">Контакти</a></li>
+                        <li>
+                            <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>
+                                Головна
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/pets" className={({ isActive }) => isActive ? 'active' : ''}>
+                                Улюбленці
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>
+                                Про застосунок
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
 

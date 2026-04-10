@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import AddPetForm from './components/AddPetForm';
 import Main from './components/Main';
 import PetExperts from './components/PetExperts';
 import Footer from './components/Footer';
+import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
+import PetsPage from './components/PetsPage';
+import PetDetailsPage from './components/PetDetailsPage';
+import NotFoundPage from './components/NotFoundPage';
 import './index.css';
 
 
@@ -24,18 +30,11 @@ function App() {
 
   });
 
-  const [filter, setFilter] = useState('all');
-
   const handleToggleLike = (id) => {
     setPets(pets.map(pet =>
       pet.id === id ? { ...pet, isLiked: !pet.isLiked } : pet
     ));
   };
-
-  const filteredPets = pets.filter(pet => {
-    if (filter === 'liked') return pet.isLiked;
-    return true; // для 'all' повертаємо всіх
-  });
 
   const handleAddPet = (newPet) => {
     setPets(prevPets => [...prevPets, newPet]);
@@ -48,23 +47,15 @@ function App() {
   return (
     <div className="App">
       <Header likedCount={pets.filter(pet => pet.isLiked).length} />
-      <AddPetForm onAddPet={handleAddPet} />
-      <div className="filter-container container">
-        <button
-          className={filter === 'all' ? 'filter-btn active' : 'filter-btn'}
-          onClick={() => setFilter('all')}
-        >
-          Усі ({pets.length})
-        </button>
-        <button
-          className={filter === 'liked' ? 'filter-btn active' : 'filter-btn'}
-          onClick={() => setFilter('liked')}
-        >
-          Тільки улюблені ({pets.filter(p => p.isLiked).length})
-        </button>
-      </div>
-      <Main pets={filteredPets} onToggleLike={handleToggleLike} currentFilter={filter} />
-      <PetExperts />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pets" element={<PetsPage pets={pets} onToggleLike={handleToggleLike} onAddPet={handleAddPet} />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/pet/:id" element={<PetDetailsPage pets={pets} />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+
       <Footer year="2026" author="Коваленко Євгеній" />
     </div>
   );

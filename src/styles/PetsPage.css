@@ -1,0 +1,87 @@
+.container.main {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-container button {
+    padding: 10px 24px;
+    border: none;
+    background: transparent;
+    color: #636e72;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-container button:hover {
+    color: #0984e3;
+    background: rgba(9, 130, 227, 0.05);
+}
+
+.filter-container button.active {
+    background: #0984e3;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.3);
+    transform: scale(1.05);
+}
+
+.main {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pet-experts-container {
+    margin-top: 20px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px dashed #dfe6e9;
+}
+
+@media (max-width: 480px) {
+    .filter-container {
+        width: 100%;
+        border-radius: 15px;
+        flex-direction: column;
+        gap: 5px;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .filter-container button {
+        width: 100%;
+        border: 1px solid #dfe6e9;
+    }
+
+    .filter-container button.active {
+        border-color: #0984e3;
+    }
+}
