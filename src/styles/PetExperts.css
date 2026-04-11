@@ -1,7 +1,7 @@
 .section-hr {
     border: none;
     height: 1px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), var(--border-color), rgba(0, 0, 0, 0));
     margin: 60px auto 40px;
     width: 90%;
 }
@@ -10,7 +10,7 @@
     text-align: center;
     margin-bottom: 40px;
     font-size: 1.8rem;
-    color: #2d3436;
+    color: var(--text-color);
     font-weight: 700;
 }
 
@@ -24,18 +24,19 @@
 }
 
 .expert-card {
-    background: rgba(255, 255, 255, 0.4);
+    background: var(--card-bg);
     backdrop-filter: blur(5px);
     padding: 30px;
     border-radius: 20px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
 }
 
 .expert-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.6);
+    border-color: var(--accent-color);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -44,14 +45,15 @@
     height: 100px;
     border-radius: 50%;
     margin-bottom: 15px;
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--border-color);
     object-fit: cover;
+    border: 2px solid var(--border-color);
 }
 
 .expert-card h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
-    color: #2d3436;
+    color: var(--text-color);
 }
 
 .expert-role {
@@ -65,7 +67,7 @@
 
 .expert-email {
     font-size: 0.8rem;
-    color: #636e72;
+    color: var(--text-secondary);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -86,8 +88,8 @@
 .loader-spinner {
     width: 50px;
     height: 50px;
-    border: 5px solid rgba(0, 184, 148, 0.1);
-    border-top: 5px solid #00b894;
+    border: 5px solid var(--border-color);
+    border-top: 5px solid var(--accent-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
@@ -104,7 +106,7 @@
 }
 
 .loading-text {
-    color: #636e72;
+    color: var(--text-secondary);
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -116,6 +118,7 @@
     border-radius: 24px;
     border: 1px solid rgba(214, 48, 49, 0.1);
     max-width: 400px;
+    color: var(--text-color);
 }
 
 .error-icon-wrapper {
@@ -155,7 +158,7 @@
 }
 
 .error-box p {
-    color: #636e72;
+    color: var(--text-secondary);
     margin-bottom: 25px;
     line-height: 1.5;
 }

@@ -1,5 +1,3 @@
-/* HomePage.css */
-
 .hero-section {
     display: flex;
     flex-direction: column;
@@ -7,16 +5,16 @@
     justify-content: center;
     text-align: center;
     padding: 80px 40px;
-    background: linear-gradient(135deg, #ffffff 0%, #f1f2f6 100%);
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-color) 100%);
     border-radius: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
     margin-bottom: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--border-color);
 }
 
 .hero-section h1 {
     font-size: 3.5rem;
-    background: linear-gradient(to right, #2d3436, #0984e3);
+    background: linear-gradient(to right, var(--text-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 24px;
@@ -26,16 +24,15 @@
 
 .hero-section p {
     font-size: 1.2rem;
-    color: #636e72;
+    color: var(--text-secondary);
     max-width: 600px;
     line-height: 1.8;
     margin-bottom: 40px;
 }
 
-/* Кнопка CTA з ефектом пульсації при наведенні */
 .cta-button {
     padding: 18px 45px;
-    background: #0984e3;
+    background: var(--accent-color);
     color: white;
     text-decoration: none;
     border-radius: 15px;
@@ -47,11 +44,10 @@
 
 .cta-button:hover {
     transform: translateY(-5px) scale(1.02);
-    background: #74b9ff;
+    filter: brightness(1.1);
     box-shadow: 0 15px 30px rgba(9, 132, 227, 0.3);
 }
 
-/* Секція характеристик */
 .home-features {
     width: 100%;
     margin-top: 60px;
@@ -59,7 +55,7 @@
 
 .home-features h3 {
     font-size: 1.8rem;
-    color: #2d3436;
+    color: var(--text-color);
     margin-bottom: 40px;
     text-align: center;
 }
@@ -73,10 +69,10 @@
 }
 
 .home-features li {
-    background: white;
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid #dfe6e9;
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -84,15 +80,15 @@
     gap: 15px;
     position: relative;
     overflow: hidden;
+    color: var(--text-color);
 }
 
 .home-features li:hover {
-    border-color: #0984e3;
+    border-color: var(--accent-color);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     transform: translateY(-5px);
 }
 
-/* Декоративний елемент для кожного списку */
 .home-features li::before {
     content: "";
     position: absolute;
@@ -100,22 +96,21 @@
     left: 0;
     width: 4px;
     height: 100%;
-    background: #0984e3;
+    background: var(--accent-color);
 }
 
 .home-features li strong {
     font-size: 1.2rem;
-    color: #2d3436;
+    color: var(--text-color);
     display: block;
 }
 
 .home-features li span {
-    color: #636e72;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.5;
 }
 
-/* Адаптивність */
 @media (max-width: 768px) {
     .hero-section {
         padding: 40px 20px;

@@ -2,12 +2,40 @@
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  --bg-color: #f9f9f9;
+  --text-color: #2c3e50;
+  --text-secondary: #636e72;
+  --card-bg: #ffffff;
+  --border-color: #dddddd;
+  --accent-color: #ff7675;
+  --header-bg: #ffffff;
+}
+
+[data-theme='dark'] {
+  --bg-color: #0f172a;
+  --header-bg: rgba(15, 23, 42, 0.9);
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --accent-color: #ff7675;
+}
+
+[data-theme='dark'] .site-logo {
+  filter: invert(1) brightness(2) !important;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme='dark'] .logo-area:hover .site-logo {
+  filter: invert(1) brightness(2) !important;
+  transform: scale(1.1);
 }
 
 body {
   margin: 0;
-  background-color: #f9f9f9;
-  color: #2c3e50;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .container {
@@ -24,6 +52,7 @@ body {
 .main-title {
   margin: 30px 0;
   text-align: center;
+  color: var(--text-color);
 }
 
 h2 {

@@ -1,6 +1,7 @@
 .error-panel {
     text-align: center;
     padding: 50px 20px;
+    color: var(--text-color);
 }
 
 .error-icon {
@@ -14,7 +15,7 @@
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #0984e3;
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -22,7 +23,7 @@
 }
 
 .back-link-btn:hover {
-    background-color: #74b9ff;
+    filter: brightness(1.1);
 }
 
 .navigation-link {
@@ -30,20 +31,21 @@
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    color: #636e72;
+    color: var(--text-secondary);
     margin-bottom: 30px;
     font-weight: 500;
     transition: 0.2s;
 }
 
 .navigation-link:hover {
-    color: #0984e3;
+    color: var(--accent-color);
 }
 
 .details-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    color: var(--text-color);
 }
 
 @media (max-width: 768px) {
@@ -57,22 +59,24 @@
     max-width: 450px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .details-title {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #2d3436;
+    color: var(--text-color);
 }
 
 .details-row {
     margin-bottom: 12px;
     font-size: 1.2rem;
+    color: var(--text-color);
 }
 
 .details-label {
     font-weight: bold;
-    color: #636e72;
+    color: var(--text-secondary);
     margin-right: 10px;
 }
 
@@ -82,7 +86,7 @@
     gap: 12px;
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 1px solid #dfe6e9;
+    border-top: 1px solid var(--border-color);
 }
 
 .status-heart {
@@ -92,9 +96,9 @@
 
 .status-text {
     font-weight: 600;
-    color: #636e72;
+    color: var(--text-secondary);
 }
 
 .status-text.liked {
-    color: #ff7675;
+    color: var(--accent-color);
 }

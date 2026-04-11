@@ -1,15 +1,16 @@
 .add-pet-form {
-    background: #f8f9fa;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 30px;
+    border: 1px solid var(--border-color);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .add-pet-form h3 {
     margin-top: 0;
     margin-bottom: 15px;
-    color: #2d3436;
+    color: var(--text-color);
 }
 
 .form-group {
@@ -20,11 +21,25 @@
 
 .form-group input,
 .form-group select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
     padding: 10px;
     border: 1px solid #dfe6e9;
     border-radius: 8px;
     flex: 1;
     min-width: 150px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(255, 118, 117, 0.2);
+}
+
+.form-group select option {
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 .form-group button {

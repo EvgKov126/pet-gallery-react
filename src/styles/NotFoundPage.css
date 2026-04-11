@@ -6,30 +6,31 @@
     text-align: center;
     padding: 60px 20px;
     min-height: 50vh;
+    color: var(--text-color);
 }
 
 .not-found-icon {
     width: 120px;
     height: 120px;
     max-width: 100%;
-    stroke: #57606f;
+    stroke: var(--accent-color);
     margin-bottom: 30px;
     transition: transform 0.3s ease;
 }
 
 .not-found-icon:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(5deg);
 }
 
 .not-found-panel h1 {
     font-size: 2rem;
-    color: #2f3542;
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 
 .not-found-panel p {
     font-size: 1.1rem;
-    color: #747d8c;
+    color: var(--text-secondary);
     max-width: 500px;
     margin-bottom: 30px;
 }
@@ -37,7 +38,7 @@
 .home-link {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #ff7675;
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -47,7 +48,7 @@
 }
 
 .home-link:hover {
-    background-color: #ffcccc;
+    filter: brightness(1.1);
     transform: translateY(-2px);
 }
 
